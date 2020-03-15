@@ -1,7 +1,7 @@
 #largest prime factor of 600851475143
 import math
-# a = 600851475143
-a1 = int(input())
+a = 600851475143
+# a1 = int(input())
 b=[]
 
 def primeFactors(n):
@@ -46,10 +46,10 @@ def primeFactors(n):
     if n2 > 2: 
         b.append(int(n2))     ''' 
     return b
-b = primeFactors(a1)
+b = primeFactors(a)
 b.sort(reverse=True)
 
-print ("Largest Prime Factor of ", a1,": ", b[0])
+print ("Largest Prime Factor of ", a,": ", b[0])
 print(b,sep = ",")
             
     
