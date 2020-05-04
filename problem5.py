@@ -2,29 +2,7 @@
 
 # find lcm of 1-20
 
-a = [x for x in range(1,21)]
-print(a)
 lcm = 1
-def isPrime(n) : 
-  
-    # Corner cases 
-    if (n <= 1) : 
-        return 0
-    if (n <= 3) : 
-        return 1
-  
-    # This is checked so that we can skip  
-    # middle five numbers in below loop 
-    if (n % 2 == 0 or n % 3 == 0) : 
-        return 0
-  
-    i = 5
-    while(i * i <= n) : 
-        if (n % i == 0 or n % (i + 2) == 0) : 
-            return 0
-        i = i + 6
-  
-    return 1
 
 def sieveEratosthenes(n):
     c= []
@@ -41,50 +19,40 @@ def sieveEratosthenes(n):
         if prime[p]:
             c.append(p)
     return c
-c = sieveEratosthenes(10)
-
-d = {}
-
-np = []  #NON PRIMES
 
 
-for x in a:
-    d[x]=isPrime(x)
-    if d[x] == 1 and x>10:
-        # print(x)
-        lcm *= x
-        print(" ",lcm)
-        d[x] = 0
-    else:
-        np.append(x)
+n = int(input("Enter number 'n' to print lcm of first n natural numbers:"))
+c = sieveEratosthenes(n)
+numbers = [x for x in range(1,n+1)]  
+
         
-print(np)       
+print(numbers)       
         
 
 print(range(len(c)))
 
 for i in c:
     
-    count = [0 for x in range(len(np))]
+    count = [0 for x in range(len(numbers))]
     
     j = 0
     
-    for j in range(len(np)):
+    for j in range(len(numbers)):
         
-        if np[j]%i==0:
-            print("now",np[j],"on repeated division with",i)
-            while(np[j]/i>=1 and np[j]%i==0):
-                np[j]/=i
+        if numbers[j]%i==0:
+            print("now",numbers[j],"on repeated division with",i)
+            while(numbers[j]/i>=1 and numbers[j]%i==0):
+                numbers[j]/=i
                 count[j]+=1
                 
-            print("becomes",np[j])
+            print("becomes",numbers[j])
             
-            # j+=1
+            
         
     print("max = ",max(count))
     for x in range(max(count)):
         lcm*=i        
-    print(i,np,"\n\n")
+    print(i,numbers,"\n\n")
             
             
         
