@@ -20,10 +20,12 @@ def sieveEratosthenes(n):
             c.append(p)
     return c
 
+# For any number
+# n = int(input("Enter number 'n' to print lcm of first n natural numbers:"))
 
-n = int(input("Enter number 'n' to print lcm of first n natural numbers:"))
-c = sieveEratosthenes(n)
-numbers = [x for x in range(1,n+1)]  
+
+c = sieveEratosthenes(20)                       #n for 20
+numbers = [x for x in range(1,21)]              #n+1 for 21
 
         
 print(numbers)       
