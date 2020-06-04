@@ -54,7 +54,7 @@ String = """
 def _product(prevProd,arr,first,prev,a):
     prod = 1
     
-    # if prevProd == 0 and prev != first -1:
+    
     
     for i in arr:
         if arr[i]:
@@ -64,17 +64,7 @@ def _product(prevProd,arr,first,prev,a):
             return 0,first+i+1
     return prod,first+1
     
-    
-    # elif first+13<=999 and 0 not in arr:
-    #     prod = (prevProd / a)
-    #     prod = prod * arr[12]
-    #     print("case2",prod)
-    #     return prod,first+1
-    
-    
-    # elif 0 in arr or first+13>999:
-    #     print("case3")
-    #     return prevProd,first+1
+
     
 
 
@@ -110,6 +100,5 @@ while(last<=len(number)):
         largest = product
         
     last = first + 13
-    # print(first-1,new_product,last-1)
             
 print(largest)
